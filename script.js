@@ -13,18 +13,14 @@ paper.next = rock;
 rock.next = scissors;
 scissors.next = paper;
 
-console.log(paper.next);
-console.log(rock.next);
-console.log(scissors.next);
-console.log(paper.next.next);
+let unknownResult =
+    "Something went wrong!\n (As mentioned in the rules... I guess you have a tough life!)\n";
+const allowedAnswers = ["paper", "rock", "scissors"];
 
 function rockPaperScissors(myGuess) {
     console.log(
         "The game is simple.\n You choose ['rock', 'paper', 'scissors'] same does the robot and the combinations are compared.\n If you struggle with understand the rules... Seems like you have some serious problems...(((\n",
     );
-    let unknownResult =
-        "Something went wrong!\n (As mentioned in the rules... I guess you have a tough life!)\n";
-    const allowedAnswers = ["paper", "rock", "scissors"];
     if (!allowedAnswers.includes(myGuess)) {
         return unknownResult;
     }
@@ -50,4 +46,8 @@ function rockPaperScissors(myGuess) {
     }
 }
 
-console.log(rockPaperScissors("paper"));
+console.log(
+    rockPaperScissors(
+        allowedAnswers[Math.floor(Math.random() * allowedAnswers.length)],
+    ),
+);
